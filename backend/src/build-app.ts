@@ -1,4 +1,4 @@
-import { ServerPropsInterface } from "./types/server-props-interface"
+import type { ServerPropsInterface } from "./types/server-props-interface"
 
 export const buildApp = async ({ app, cors, routes }:
     { app: ServerPropsInterface, cors: Function, routes: Function }): Promise<void> => {
