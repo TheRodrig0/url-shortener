@@ -1,5 +1,5 @@
-import type { ServerRequestInterface } from "./server-request-interface"
-import type { ServerReplyInterface } from "./servers-reply"
+import type { ServerRequestInterface } from "./common/server-request-interface"
+import type { ServerReplyInterface } from "./common/server-reply-interface"
 
 export interface ServerPropsInterface {
     register: (plugin: any, opts?: any) => any
