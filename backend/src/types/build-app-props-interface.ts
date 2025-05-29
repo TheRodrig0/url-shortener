@@ -1,4 +1,4 @@
-import { ServerPropsInterface } from "./server-props-interface"
+import type { ServerPropsInterface } from "./server-props-interface"
 
 export interface BuildAppPropsInterface {
     app: ServerPropsInterface
