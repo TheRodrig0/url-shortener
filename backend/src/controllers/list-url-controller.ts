@@ -19,8 +19,7 @@ export class ListUrlController {
             return reply.send({ error: "URL não encontrada" })
         }
 
-        if (reply.status) reply.status(302)
-        return reply.redirect(result)
-    
+        if (reply.status) reply.status(201)
+        return reply.send({ url: result })
     }
 }
