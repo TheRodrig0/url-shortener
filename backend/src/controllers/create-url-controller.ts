@@ -11,18 +11,18 @@ export class CreateUrlController {
         const createUrlService = new CreateUrlService()
         const result = await createUrlService.execute({ originalUrl, shortUrl })
 
-        if (result) {
-            if (reply.status) reply.status(201)
+        if (!result) {
+            if (reply.status) reply.status(400)
             return reply.send({
-                message: "success",
-                shortUrl: result
-
+                error: "Invalid URL"
             })
         }
 
-        if (reply.status) reply.status(400)
+        if (reply.status) reply.status(201)
         return reply.send({
-            error: "Invalid URL"
+            message: "success",
+            shortUrl: result
+
         })
     }
 }
