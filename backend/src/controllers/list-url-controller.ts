@@ -6,7 +6,7 @@ export class ListUrlController {
     async handle(request: ServerRequestInterface, reply: ServerReplyInterface) {
         const shortUrl = request.query?.shortUrl || request.params?.shortUrl
 
-        if(!shortUrl || shortUrl.length <= 0) {
+        if (!shortUrl || shortUrl.length <= 0) {
             if (reply.status) reply.status(400)
             return reply.send({ error: "URL inválida" })
         }
@@ -14,12 +14,13 @@ export class ListUrlController {
         const listUrlService = new ListUrlService()
         const result = await listUrlService.execute(shortUrl)
 
-        if (result) {
-            if (reply.status) reply.status(302)
-            return reply.redirect(result)
+        if (!result) {
+            if (reply.status) reply.status(404)
+            return reply.send({ error: "URL não encontrada" })
         }
 
-        if (reply.status) reply.status(404)
-        return reply.send({ error: "URL não encontrada" })
+        if (reply.status) reply.status(302)
+        return reply.redirect(result)
+    
     }
 }
