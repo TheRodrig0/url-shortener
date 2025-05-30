@@ -38,7 +38,7 @@ buildApp({
     cors,
     routes,
     rateLimit: rateLimitConfig,
-    listenPort: Number(process.env.SERVER_PORT) || 3000
+    listenPort: Number(process.env.PORT) || 3000
 })
 
 connectDatabase()
@@ -47,3 +47,9 @@ process.on("SIGINT", async () => {
     await mongoose.disconnect()
     process.exit(0)
 })
+
+// Necessário para o deploy na Vercel
+export default async (req: any, res: any) => {
+    await app.ready()
+    app.server.emit('request', req, res)
+}
