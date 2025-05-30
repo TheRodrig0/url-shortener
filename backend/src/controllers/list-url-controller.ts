@@ -20,6 +20,9 @@ export class ListUrlController {
         }
 
         if (reply.status) reply.status(201)
-        return reply.send({ url: result })
+        return reply.send({
+            message: "success",
+            url: result
+        })
     }
 }
