@@ -2,40 +2,33 @@
 
 ![Preview do Projeto](https://github.com/user-attachments/assets/89535c48-8261-4dfa-adf7-21c035bf82dc)
 
-Um encurtador de URLs moderno e eficiente, construído com uma arquitetura full-stack robusta.
+Um simples encurtador de URLs que permite transformar links longos em versões mais curtas.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- Encurtamento de URLs longas para links mais curtos e amigáveis
-- Interface moderna e responsiva
-- Redirecionamento rápido
-- Proteção contra spam com rate limiting
-- Validação de URLs
-- Feedback visual durante operações
-- Cópia de URL com um clique
+- Encurtar URLs longas
+- Copiar URL encurtada
+- Redirecionamento para URL original
+- Proteção básica com rate limiting
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias
 
 ### Backend
 - Node.js
 - Fastify
 - MongoDB
 - TypeScript
-- Zod (validação)
-- Rate Limiting
 
 ### Frontend
 - Vite
 - JavaScript
-- CSS Moderno
-- Design Responsivo
+- CSS
 
-## 📦 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Node.js
 - MongoDB
-- npm ou yarn
 
 ### Backend
 
@@ -49,13 +42,13 @@ cd backend
 npm install
 ```
 
-3. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+3. Configure o `.env`:
 ```env
 DATABASE_URL="sua_url_do_mongodb"
 PORT=3000
 ```
 
-4. Execute o servidor de desenvolvimento:
+4. Rode o projeto:
 ```bash
 npm run dev
 ```
@@ -72,59 +65,30 @@ cd frontend
 npm install
 ```
 
-3. Crie um arquivo `.env` na raiz do projeto com:
+3. Configure o `.env`:
 ```env
 VITE_API_URL="http://localhost:3000"
 ```
 
-4. Execute o servidor de desenvolvimento:
+4. Rode o projeto:
 ```bash
 npm run dev
 ```
 
-## 🚀 Deploy
+## Deploy (Vercel)
 
-### Backend (Vercel)
-1. Configure as variáveis de ambiente na Vercel:
-   - `DATABASE_URL`
-   - `PORT`
-
-2. Deploy via CLI:
+### Backend
 ```bash
 vercel
 ```
 
-### Frontend (Vercel)
-1. Configure as variáveis de ambiente na Vercel:
-   - `VITE_API_URL`
-
-2. Deploy via CLI:
+### Frontend
 ```bash
 vercel
 ```
 
-## 🌟 Como Usar
+Lembre-se de configurar as variáveis de ambiente na Vercel.
 
-1. Acesse a aplicação através do navegador
-2. Cole uma URL longa no campo de entrada
-3. Clique em "Encurtar URL"
-4. Copie a URL encurtada usando o botão "Copiar"
-5. Compartilhe a URL encurtada!
+## Licença
 
-## 🔒 Segurança
-
-- Rate limiting para prevenir abuso
-- Validação de URLs para prevenir redirecionamentos maliciosos
-- Sanitização de entradas
-- Proteção contra XSS
-
-## 📝 Licença
-
-Este projeto está sob a licença Apache 2.0. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👨‍💻 Autor
-
-TheRodrig0
-
----
-⭐ Se este projeto te ajudou, considere dar uma estrela no GitHub!
+Apache 2.0
