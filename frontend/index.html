@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Encurtador de URLs - Transforme URLs longas em links curtos e fáceis de compartilhar" />
+    <title>Encurtador de URLs</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="loadingContainer" class="loading-container hidden">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Redirecionando...</p>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <h1>Encurtador de URLs</h1>
+        <p class="subtitle">Transforme URLs longas em links curtos e fáceis de compartilhar</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="url-shortener-section" >
+          <h2 id="form-title" class="visually-hidden">Encurtar URL</h2>
+          
+          <form id="urlForm" class="url-form"  onSubmit="return false;">
+            <div class="form-group">
+              <label for="urlInput" class="form-label">Digite ou cole sua URL</label>
+              <input 
+                type="url" 
+                id="urlInput" 
+                class="url-input"
+                placeholder="https://exemplo.com/sua-url-longa" 
+                required
+              />
+              <small id="urlHelp" class="form-help">Cole uma URL válida começando com http:// ou https://</small>
+            </div>
+            
+            <button type="submit" class="submit-button">
+              <span class="button-text">Encurtar URL</span>
+            </button>
+          </form>
+
+          <div id="urlOutput" class="url-output hidden">
+            <h3>URL Encurtada</h3>
+            <div class="output-container">
+              <input type="text" id="shortUrlOutput" class="short-url-input" readonly />
+              <button id="copyButton" class="copy-button">
+                <span class="button-text">Copiar</span>
+              </button>
+            </div>
+            <div class="url-preview">
+              <p>Clique para testar:</p>
+              <a id="shortUrlLink" href="#" target="_blank" class="preview-link"></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
